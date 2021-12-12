@@ -7,6 +7,10 @@ body {
   color: #5a5a5a;
 }
 
+.carousel{
+  padding-top: 2rem;
+}
+
 .carousel-title {
   font-size: 1em;
   line-height: 0.9;
