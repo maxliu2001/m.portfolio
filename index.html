@@ -5,233 +5,175 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Max Liu's personal portfolio">
+    <meta name="author" content="Yinghao Liu">
     <link rel="icon" href="../../favicon.ico">
-      <link href="https://fonts.googleapis.com/css?family=Oswald:200,300" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Lato:200,300" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:200,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
 
     <title>M.Portfolio</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap-5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-
-   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      
-    <!-- Custom styles for this template -->
-    <link href="./resources/css/index.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="resources/css/index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
-<!-- NAVBAR
-================================================== -->
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="navbar-wrapper">
-      <div class="container">
+  <!-- NAVBAR
+  ================================================== -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Max Liu's portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link disabled">More</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">M.Portfolio</a>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> About</a></li>
-                <li class="disabled"><a href="#contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th"></span> Portfolio <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li class="disabled"><a href="#">Photography</a></li>
-                    <li class="disabled"><a href="#">Music</a></li>
-                    <!--<li><a href="#">Something else here</a></li>-->
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Archive</li>
-                    <li class="disabled"><a href="#">Past Works</a></li>
-                    <li><a href="https://mportfolio.net">Link to Old Portfolio</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+  <body>
+    <!-- Carousel
+    ================================================== -->
+    <div class="parallax">
+    <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active position-relative">
+          <img src="./resources/Carousel1-2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
+            <p class="carousel-title display-4">Welcome</p>
+            <p class="carousel-text lead">M.Portfolio 2.0 Edition</p>
           </div>
-        </nav>
+        </div>
+        <div class="carousel-item position-relative">
+          <img src="./resources/Carousel2-2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
+            <p class="carousel-title display-4">About</p>
+            <p class="carousel-text lead">What I enjoy doing and where I am right now</p>
+          </div>
+        </div>
+        <div class="carousel-item position-relative">
+          <img src="./resources/Carousel3-2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
+            <p class="carousel-title display-4">Portfolio</p>
+            <p class="carousel-text lead">Photography portfolio and CS projects</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>    
+    <!-- /.carousel -->
 
+    <!-- START THE FEATURETTES -->
+    <section id="about">
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette mx-auto">
+      <div class="col-md">
+        <h2 class="featurette-heading">Our Mission : <span class="text-muted">Commitment and Progress</span></h2>
+        <p class="fs-4 fw-light">This portfolio serves as a responsive and interactive web platform for blogging as well as artwork display. This platform will reflect on both individual endeavor and long-term character building.</p>
+      </div>
+      <div class="col-md">
+        <img class="featurette-image img-fluid align-middle" src="./resources/IMG_4.jpg" alt="NYC skyview">
       </div>
     </div>
 
+    <hr class="featurette-divider">
 
-    <!-- Carousel
-    ================================================== -->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide img-responsive" src="./resources/Carousel1-2.jpg" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-                <h1>Welcome</h1>
-                <p>Welcome to M. Portfolio<br/>Stay tuned and be ready</p>
-                <p><button class="customize" href="#home" role="button">Subscribe Us</button></p>
-            </div>
+    <div class="row featurette mx-auto">
+      <div class="col-md">
+        <h2 class="featurette-heading">About Myself : <span class="text-muted">Who Am I ?</span></h2>
+        <p class="fs-4 fw-light">I'm Max Liu. I'm from Dalian, China. I love tennis, photography and guitar. I hope to tell you a little bit about myself through this site.</p>
+      </div>
+      <div class="col-md">
+        <img class="featurette-image img-fluid align-middle" src="./resources/IMG_5.jpg" alt="River view">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette mx-auto">
+      <div class="col-md">
+        <h2 class="featurette-heading">Why Web Design ? <span class="text-muted"> My Story</span></h2>
+        <p class="fs-4 fw-light">I was somehow influenced by my mum who majored Computer Science a long time ago. I self-studied a multitude of techniques pertaining to web design, thus gaining brief understandings about the atonamy of web structures. I decided to dig deeper to enhance my knowledge in this realm. Besides the art displayed in this portfolio, the webpage you are currently viewing is also part of my identity.</p>
+      </div>
+      <div class="col-md">
+        <img class="featurette-image img-fluid align-middle" src="./resources/IMG_6.jpg" alt="Pomfret School fall">
+      </div>
+    </div>
+
+    </div>
+    </section>
+    <!-- /END THE FEATURETTES -->
+
+    <!-- PERSONAL PROJECTS-->
+    <section id="projects" class="container-fluid">
+      <h1 class="project-title"> Projects </h1>
+      <div class="row g-4">
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4 ">
+          <div class="card-header">
+            <p class="lead">HooHacks</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">SnapShare</h5>
+            <p class="card-text">SnapShare uses machine learning to make donating your surplus food super easy. There are only 2 steps: Snap and Share. Snap a pic of your surplus food, and the machine learning model will automatically classify it and match a local food bank that needs it.</p>
+            <a href="https://github.com/maxliu2001/SnapShare" target="_blank" class="btn btn-primary">Visit our repo</a>
           </div>
         </div>
-        <div class="item">
-          <img class="second-slide img-responsive" src="./resources/Carousel2-2.jpg" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>About</h1>
-                <p>Who am I?<br/>Where am I from?</p>
-              <p><button class="customize" href="#" role="button">Learn more</button></p>
-            </div>
+      
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <p class="lead">VTHacks</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Pomodoro Cat</h5>
+            <p class="card-text">Working remotely can be challenging, especially amidst a worldwide pandemic. After analyzing the current applications that target productivity, we decide to integrate a fun game that allows users to keep their own cats while keeping track of their time using Pomodoro technique.</p>
+            <a href="https://github.com/stanford-rejects/PomodoroCat" target="_blank" class="btn btn-primary">Visit our repo</a>
           </div>
         </div>
-        <div class="item">
-          <img class="third-slide img-responsive" src="./resources/Carousel3-2.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Growth</h1>
-              <p>“You don’t take a photograph, you make it”<br/>
-                  -Ansel Adams</p>
-              <p><button class="customize" href="#" role="button">Browse gallery</button></p>
-            </div>
+
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <p class="lead">HackUCI</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">ZotMeal</h5>
+            <p class="card-text">UCI has two main dining halls that withstand a huge volume of student capacity. We decided to facilitate this process by integrating the web information from the dining hall website into an app: ZotMeal, and supply additional features to further optimize the user experience.</p>
+            <a href="https://github.com/maxliu2001/ZotMeal" target="_blank" class="btn btn-primary">Visit our repo</a>
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
+    </section>
 
-      <!-- START THE FEATURETTES -->
-          <div class="parallax">
-      <hr class="featurette-divider" id="about">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Our Mission : <span class="text-muted">Commitment and Progress</span></h2>
-          <p class="lead">This portfolio serves as a responsive and interactive web platform for blogging as well as artwork display. This platform will reflect on both individual endeavor and long-term character building.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="./resources/IMG_4.jpg" alt="Generic placeholder image">
-        </div>
+    <!-- FOOTER -->
+    <footer class="d-flex flex-column">
+      <div style = "width: 96%">
+        <p class = "lead float-end"><a href="#">Back to top</a></p>
       </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">About Myself : <span class="text-muted">Who Am I ?</span></h2>
-          <p class="lead">I'm Max Liu. I'm from Dalian, China. I love tennis, photography and guitar. I hope to tell you a little bit about myself through this site.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="./resources/IMG_5.jpg" alt="Generic placeholder image">
-        </div>
+      <div style = "width: 96%">
+        <p class="lead float-end">&copy; 2016 M.Portfolio &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </div>
+    </footer>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Why Web Design ? <span class="text-muted"> My Story</span></h2>
-          <p class="lead">I was somehow influenced by my mum who majored Computer Science a long time ago. I self-studied a multitude of techniques pertaining to web design, thus gaining brief understandings about the atonamy of web structures. I decided to dig deeper to enhance my knowledge in this realm. Besides the art displayed in this portfolio, the webpage you are currently viewing is also part of my identity.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="./resources/IMG_6.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-              <script>
-$(document).ready(function(){
-  // Add scrollspy to <body>
-  $('body').scrollspy({target: ".navbar", offset: 50});   
-
-  // Add smooth scrolling on all links inside the navbar
-  $("#myNavbar a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    }  // End if
-  });
-});
-</script>
-              
-</div>
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 M.Portfolio &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-
-      <script src="content/js/jquery.min.js"></script>
-<script src="./bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.dropdown-toggle').dropdown();
-    });
-    
-    $(document).on('click','.navbar-collapse.in',function(e) {
-    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
-        $(this).collapse('hide');
-    }
-});
-</script>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script src="./bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
-      <script src="./resources/js/index.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <!--<script src="holder.min.js"></script>-->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
