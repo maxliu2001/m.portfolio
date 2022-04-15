@@ -200,7 +200,6 @@
       $.fn.carousel = old
       return this
     }  
-  });
     // CAROUSEL DATA-API
     // =================
   

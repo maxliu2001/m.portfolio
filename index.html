@@ -8,10 +8,10 @@
     <meta name="description" content="Max Liu's personal portfolio">
     <meta name="author" content="Yinghao Liu">
     <link rel="icon" href="../../favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:200,300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300|PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300|Crimson+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Raleway:300" rel="stylesheet">
 
     <title>M.Portfolio</title>
 
@@ -32,7 +32,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
           <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link disabled">More</a>
+          <a class="nav-link" target="_blank" href="https://www.mportfolio.net">More</a>
         </div>
       </div>
     </div>
@@ -52,21 +52,21 @@
         <div class="carousel-item active position-relative">
           <img src="./resources/Carousel1-2.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-            <p class="carousel-title display-4">Welcome</p>
+            <p class="carousel-title display-1">Welcome</p>
             <p class="carousel-text lead">M.Portfolio 2.0 Edition</p>
           </div>
         </div>
         <div class="carousel-item position-relative">
           <img src="./resources/Carousel2-2.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-            <p class="carousel-title display-4">About</p>
+            <p class="carousel-title display-1">About</p>
             <p class="carousel-text lead">What I enjoy doing and where I am right now</p>
           </div>
         </div>
         <div class="carousel-item position-relative">
           <img src="./resources/Carousel3-2.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-            <p class="carousel-title display-4">Portfolio</p>
+            <p class="carousel-title display-1">Portfolio</p>
             <p class="carousel-text lead">Photography portfolio and CS projects</p>
           </div>
         </div>
@@ -89,8 +89,8 @@
 
     <div class="row featurette mx-auto">
       <div class="col-md">
-        <h2 class="featurette-heading">Our Mission : <span class="text-muted">Commitment and Progress</span></h2>
-        <p class="fs-4 fw-light">This portfolio serves as a responsive and interactive web platform for blogging as well as artwork display. This platform will reflect on both individual endeavor and long-term character building.</p>
+        <h2 class="featurette-heading">About Myself : <span class="text-muted">Who Am I ?</span></h2>
+        <p class="fs-4 fw-light">Welcome to my website. My name's Max Liu and I'm an aspiring full stack web developer interested in machine learning researches.</p>
       </div>
       <div class="col-md">
         <img class="featurette-image img-fluid align-middle" src="./resources/IMG_4.jpg" alt="NYC skyview">
@@ -101,8 +101,8 @@
 
     <div class="row featurette mx-auto">
       <div class="col-md">
-        <h2 class="featurette-heading">About Myself : <span class="text-muted">Who Am I ?</span></h2>
-        <p class="fs-4 fw-light">I'm Max Liu. I'm from Dalian, China. I love tennis, photography and guitar. I hope to tell you a little bit about myself through this site.</p>
+        <h2 class="featurette-heading">Where am I now ? <span class="text-muted">My Path</span></h2>
+        <p class="fs-4 fw-light">Graduated from Pomfret School, CT, I'm currently a CSE major at University of California, Irvine. However, I'm transferring into University of Michigan 2022 Fall.</p>
       </div>
       <div class="col-md">
         <img class="featurette-image img-fluid align-middle" src="./resources/IMG_5.jpg" alt="River view">
@@ -114,7 +114,7 @@
     <div class="row featurette mx-auto">
       <div class="col-md">
         <h2 class="featurette-heading">Why Web Design ? <span class="text-muted"> My Story</span></h2>
-        <p class="fs-4 fw-light">I was somehow influenced by my mum who majored Computer Science a long time ago. I self-studied a multitude of techniques pertaining to web design, thus gaining brief understandings about the atonamy of web structures. I decided to dig deeper to enhance my knowledge in this realm. Besides the art displayed in this portfolio, the webpage you are currently viewing is also part of my identity.</p>
+        <p class="fs-4 fw-light">I was intrigued by web design during high school where I led a web development project. Since college, I was involved in creating and maintaining websites in various school organizations and I'm aiming to improve my full stack development skills in the long run.</p>
       </div>
       <div class="col-md">
         <img class="featurette-image img-fluid align-middle" src="./resources/IMG_6.jpg" alt="Pomfret School fall">
@@ -128,7 +128,7 @@
     <!-- PERSONAL PROJECTS-->
     <section id="projects" class="container-fluid">
       <h1 class="project-title"> Projects </h1>
-      <div class="row g-4">
+      <div class="row g-4" id="cards-wrapper">
         <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4 ">
           <div class="card-header">
             <p class="lead">HooHacks</p>
@@ -159,6 +159,39 @@
             <h5 class="card-title">ZotMeal</h5>
             <p class="card-text">UCI has two main dining halls that withstand a huge volume of student capacity. We decided to facilitate this process by integrating the web information from the dining hall website into an app: ZotMeal, and supply additional features to further optimize the user experience.</p>
             <a href="https://github.com/maxliu2001/ZotMeal" target="_blank" class="btn btn-primary">Visit our repo</a>
+          </div>
+        </div>
+
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <p class="lead">Digital Learning Lab, UCI</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CodeAI</h5>
+            <p class="card-text">This project integrates a natural language processor into a website using React.js, next.js and Firebase in order to build a learning platform for lower income elementary school students in Santa Ana, CA to learn AI literacy and possibly embark academic persuit in computer science.</p>
+            <a href="https://github.com/codeAI-Project/codeAI-Lab" target="_blank" class="btn btn-primary">Visit our repo</a>
+          </div>
+        </div>
+
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <p class="lead">New University, UCI</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">New University Web Dev</h5>
+            <p class="card-text">This project includes a few pages that I'm currently developing for New University, the official student newspaper of UCI. Recruitment, orientation and intern/apprentice gallery sites are currently under development.</p>
+            <a class="btn btn-secondary" disabled>Under construction</a>
+          </div>
+        </div>
+
+        <div class="card project-tile p-2 border col-sm-12 col-md-6 col-lg-4">
+          <div class="card-header">
+            <p class="lead">Personal Project</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">SENet</h5>
+            <p class="card-text">During my involvment in a summer research seminar at USC, I was able to build a rudimentary SENet, a subcategory of CNN, which is trained and tested by CIFAR-100 dataset. Tensorflow is used in this project and the project is run on Mac conda environment.</p>
+            <a href="https://github.com/maxliu2001/SENet" target="_blank" class="btn btn-primary">Visit our repo</a>
           </div>
         </div>
       </div>
