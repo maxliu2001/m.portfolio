@@ -1,2 +1,2 @@
-# m.portfolio
-My personal project page (still under construction)
+# M.portfolio
+My personal website of my photography and project work.
