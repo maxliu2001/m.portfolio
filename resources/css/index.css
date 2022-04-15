@@ -7,18 +7,27 @@ body {
   color: #5a5a5a;
 }
 
+.navbar-brand {
+  font-family: Raleway, Sans-Serif;
+}
+
+.navbar-nav {
+  font-family: Frank Ruhl Libre, Sans-Serif;
+}
+
 .carousel{
   padding-top: 2rem;
 }
 
 .carousel-title {
-  font-size: 1em;
   line-height: 0.9;
+  font-family: Raleway, Sans-Serif;
 }
 
 .carousel-text {
   font-size: 0.7vw;
   line-height: 0.9;
+  font-family: Frank Ruhl Libre, Sans-Serif;
 }
 
 /* Featurettes
@@ -38,6 +47,10 @@ body {
   width: 96%;
 }
 
+.featurette p {
+  font-family: PT Sans, Sans-Serif;
+}
+
 .featurette-divider {
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
   border-top: 2px solid gainsboro !important;
@@ -48,6 +61,7 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+  font-family: Nunito, Sans-Serif;
 }
 
 .col-md img:hover{
@@ -67,6 +81,26 @@ body {
 
 .project-tile .card {
   z-index: -1 !important;
+}
+
+#cards-wrapper {
+  display:flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.card-title {
+  font-family: Chivo, Sans-Serif;
+}
+
+.card-text {
+  font-family: Crimson Text, Serif;
+}
+
+.card-body a {
+  font-family: Chivo, Sans-Serif;
 }
 
 /*EDITING FOOTER FOR VISUAL APPEARANCES*/
@@ -94,6 +128,7 @@ footer{
   .carousel-title {
     font-size: 2vw;
     line-height: 1;
+    
   }
     
   .carousel-text {
