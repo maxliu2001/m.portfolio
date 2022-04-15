@@ -44,7 +44,7 @@ body {
 }
 
 .featurette {
-  width: 96%;
+  width: 100%;
 }
 
 .featurette p {
@@ -87,8 +87,11 @@ body {
   display:flex;
   justify-content: space-evenly;
   gap: 1rem;
-  width: 100%;
   padding-bottom: 1rem;
+}
+
+#projects {
+  background-color: aliceblue;
 }
 
 .card-title {
@@ -121,6 +124,11 @@ footer{
   .carousel-text {
     font-size: 0.5vw;
     line-height: 1;
+  }
+
+  #cards-wrapper {
+    padding-left: 2%;
+    padding-right: 2%;
   }
 }
 @media (min-width: 768px) {
