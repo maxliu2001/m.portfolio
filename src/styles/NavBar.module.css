@@ -1,0 +1,6 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    font-size: 1rem;
+}
