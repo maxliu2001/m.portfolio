@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const enterAnimation = {
-    hidden: { y: 1000 },
+    hidden: { x: 500 },
     visible: {
-      y: 200,
+      x: 25,
       transition: {
         type: 'spring',
         duration: 1
@@ -21,42 +21,50 @@ export default function Home() {
     <>
       <Head>
         <title>MPortfolio</title>
-        <meta name="description" content="New Online Portfolio for Max Liu" />
+        <meta name="description" content="Max Liu Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-
+      <NavBar></NavBar>
         <motion.div
-        className="card-container"
+        className="div-container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
+        id="main"
         >
           <motion.section className={styles.header} 
           variants={enterAnimation}
           > 
-          <NavBar></NavBar>
-          <h1>Welcome to my portfolio</h1>
+            <h1>Welcome to my portfolio</h1>
           </motion.section>
         </motion.div>
 
         <motion.div
-        className="card-container"
+        className="div-container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
+        id="about"
         >
-          <motion.section className={styles.header} 
+          <motion.section className={styles.header}
           variants={enterAnimation}
-          > About </motion.section>
+          > 
+            <h1 >About</h1>
+            <p className={styles.headertxt}>
+              My name is Yinghao(Max) Liu and I am a junior majoring in computer science and data science
+              at University of Michigan. 
+            </p>
+          </motion.section>
         </motion.div>
 
         <motion.div
-        className="card-container"
+        className="div-container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
+        id="projects"
         >
           <motion.section className={styles.header} 
           variants={enterAnimation}
@@ -64,10 +72,11 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-        className="card-container"
+        className="div-container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
+        id="contact"
         >
           <motion.section className={styles.header} 
           variants={enterAnimation}

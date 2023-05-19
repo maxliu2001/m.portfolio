@@ -11,6 +11,15 @@
   height: 100vh;
   font-family: Inter;
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headertxt {
+  height: 10vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
 }
 
 .about {
