@@ -129,7 +129,7 @@ export default function Home() {
             <Grid xs={12} md={4}>
               <Avatar
                 alt="Max Liu"
-                src="/Yinghao_Liu.JPG"
+                src="Yinghao_Liu.JPG"
                 sx={{ width: 130, height: 130 }}
                 className={styles.aboutavatar}
               />
