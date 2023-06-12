@@ -1,44 +1,72 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
 
 .header {
   height: 100vh;
-  font-family: Inter;
-  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 2rem;
+  align-items: center;
+  text-align: center;
 }
 
-.headertxt {
-  height: 10vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.aboutsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 1rem;
+}
+
+.aboutheader {
+  font-size: 5rem;
+  margin-bottom: 3vh;
+}
+
+.aboutavatar {
+  margin-left: 5vw;
+}
+
+.aboutcardgroup {
+  padding: 2rem;
+}
+
+.aboutcard {
+  width:auto;
+}
+
+.aboutcardtxt {
   font-size: 1em;
 }
 
-.about {
-  height: 100vh;
+.projectsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding: 1rem;
+  padding-top: 10vh;
 }
 
-.projects {
-  height: 100vh;
-}
-
-.contact {
-  height: 100vh;
+.projectheader {
+  font-size: 5rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(4, minmax(23%, auto));
   width: var(--max-width);
   max-width: 100%;
+  gap: 2%;
+  align-self: center;
 }
 
 .card {
@@ -47,6 +75,10 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card span {
@@ -67,6 +99,31 @@
   max-width: 30ch;
 }
 
+.contactsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto; 
+  padding-top: 10vh;
+}
+
+.contactheader {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.footer {
+  width: 100vw;
+  min-height: 100%;
+  height: 20vh;
+  display: flex;
+  opacity: 0.5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -81,15 +138,12 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
-
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
+    gap: 3vh;
   }
 
   .card {
@@ -98,6 +152,10 @@
 
   .card h2 {
     margin-bottom: 0.5rem;
+  }
+
+  .aboutsection {
+    padding-top: 10vh;
   }
 }
 
