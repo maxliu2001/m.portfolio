@@ -1,0 +1,167 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.aboutsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 1rem;
+}
+
+.aboutheader {
+  font-size: 5rem;
+  margin-bottom: 3vh;
+}
+
+.aboutavatar {
+  margin-left: 5vw;
+}
+
+.aboutcardgroup {
+  padding: 2rem;
+}
+
+.aboutcard {
+  width:auto;
+}
+
+.aboutcardtxt {
+  font-size: 1em;
+}
+
+.projectsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding: 1rem;
+  padding-top: 10vh;
+}
+
+.projectheader {
+  font-size: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(23%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+  gap: 2%;
+  align-self: center;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+.contactsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto; 
+  padding-top: 10vh;
+}
+
+.contactheader {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.footer {
+  width: 100vw;
+  min-height: 100%;
+  height: 20vh;
+  display: flex;
+  opacity: 0.5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .card:hover span {
+    transform: translateX(4px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+    gap: 3vh;
+  }
+
+  .card {
+    padding: 1rem 2.5rem;
+  }
+
+  .card h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .aboutsection {
+    padding-top: 10vh;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
