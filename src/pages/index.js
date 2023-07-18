@@ -119,7 +119,7 @@ export default function Home() {
       <NavBar></NavBar>
       <section className={styles.header}>
         <Image
-          src="/logo.gif" 
+          src="logo.gif" 
           alt="logo"
           width={400}
           height={400}
