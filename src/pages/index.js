@@ -7,11 +7,13 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Unstable_Grid2';
 import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper'
-import CardContent from '@mui/material/CardContent';
+import Image from 'next/image'
 import { Button } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ContactGroup from './components/contactgroup'
+import { useState, useEffect, useRef } from 'react'
+import AboutGroup from './components/aboutgroup'
+import { CenterFocusWeakTwoTone } from '@mui/icons-material'
 
 export const merri = Merriweather({ subsets: ['latin'], display: 'swap', weight: ['300'] })
 export const raleway = Raleway({ subsets: ['latin'], display: 'swap' })
@@ -83,6 +85,24 @@ const headerHover = {
   },
 }
 
+const TypingText = ({ text }) => {
+  const [content, setContent] = useState('');
+  const [typing, setTyping] = useState(true);
+
+  useEffect(() => {
+    let typingTimeout;
+    if (typing && content.length < text.length) {
+      typingTimeout = setTimeout(() => {
+        setContent(text.slice(0, content.length + 1));
+      }, 200);  // adjust typing speed here
+    } else {
+      setTyping(false);
+    }
+    return () => clearTimeout(typingTimeout);
+  }, [content, typing]);
+
+  return <p>{content}</p>;
+}
 
 
 export default function Home() {
@@ -93,11 +113,18 @@ export default function Home() {
         <title>MPortfolio</title>
         <meta name="description" content="Max Liu Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main} id="landing">
       <NavBar></NavBar>
       <section className={styles.header}>
+        <Image
+          src="/logo.gif" 
+          alt="logo"
+          width={400}
+          height={400}
+          quality={100}/> 
+
         <motion.div
         className="div-container"
         initial="hidden"
@@ -105,12 +132,17 @@ export default function Home() {
         whileHover={headerHover}
         viewport={{ once: false, amount: 0.8 }}
         >
-          <motion.h3
+          <motion.h1
           className={raleway.className}
           variants={enterAnimation}
           > 
             {welcomemsg}
-          </motion.h3>
+          </motion.h1>
+          <motion.div
+            className={raleway.className}
+            variants={enterAnimation}>
+            <TypingText text="This is Max Liu's Portfolio" />
+          </motion.div>
         </motion.div>
       </section>
 
@@ -125,51 +157,34 @@ export default function Home() {
         <motion.section
         variants={enterAnimation}
         > 
-          <Grid container spacing={{ xs: 2, md: 3 }}>
-            <Grid xs={12} md={4}>
+          <Grid container spacing={{ xs: 2, md: 3 }} 
+            className={styles.aboutheader}
+            >
+            <Grid xs={12} md={4} lg={6}>
               <Avatar
                 alt="Max Liu"
                 src="Yinghao_Liu.JPG"
-                sx={{ width: 130, height: 130 }}
+                sx={{ width: 200, height: 200 }}
                 className={styles.aboutavatar}
               />
             </Grid>
-            <Grid xs={12} md={4} alignSelf="center">
-              <h1 className={styles.aboutheader}>About</h1>
+            <Grid xs={12} md={8} lg={6}>
+              <h1> About</h1>
             </Grid>
           </Grid>
         </motion.section>
       </motion.div>
-      <Divider light />
+      
       <Grid container spacing={3} className={styles.aboutcardgroup}>
-          <Grid xs={12}>
-            <Paper elevation={3} className={styles.aboutcard}>
-              <CardContent className={styles.aboutcardtxt}>
-                <p className={merri.className}> Hi there! My name&apos;s Max Liu and I&apos;m a rising junior majoring in CS and DS at 
-                University of Michigan. I&apos;m a programmer, photographer and graphics designer. I&apos;m passionate about expressing
-                myself through the digital media. </p>
-              </CardContent>
-            </Paper>
-          </Grid>
-
-          <Grid xs={12}>
-            <Paper elevation={3} className={styles.aboutcard}>
-              <CardContent className={styles.aboutcardtxt}>
-                <p className={merri.className}> I&apos;m interested in full-stack development and robotics. I currently work for MMINT 
-                Lab at UMich and I&apos;m a member at Tau Beta Bi and MRover. </p>
-              </CardContent>
-            </Paper>
-          </Grid>
-
-          <Grid xs={12}>
-            <Paper elevation={3} className={styles.aboutcard}>
-              <CardContent className={styles.aboutcardtxt}>
-                <p className={merri.className}> Outside of school, I love mountain biking and creating graphics. I&apos;m also a huge 
-                soccer fan and definitely won&apos;t miss out on major games. I love traveling and eating great good as well. </p>
-              </CardContent>
-            </Paper>
-          </Grid>
+        <Grid xs={12} md={1} lg ={2}>
         </Grid>
+        <Grid xs={12} md={10} lg ={8}>
+          <AboutGroup/>
+        </Grid>
+        <Grid xs={12} md={1} lg ={2}>
+        </Grid>
+      </Grid>
+      
       </section>
 
       {/* Project Section */}

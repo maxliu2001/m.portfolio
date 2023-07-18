@@ -12,6 +12,8 @@
   font-size: 2rem;
   align-items: center;
   text-align: center;
+  gap: 0.5 rem;
+  padding-top: 10vh;
 }
 
 .aboutsection {
@@ -25,20 +27,17 @@
 }
 
 .aboutheader {
-  font-size: 5rem;
-  margin-bottom: 3vh;
+  font-size: 6rem;
+  text-align: 'center';
 }
 
 .aboutavatar {
   margin-left: 5vw;
+  margin-bottom: 5vh;
 }
 
 .aboutcardgroup {
-  padding: 2rem;
-}
-
-.aboutcard {
-  width:auto;
+  padding: 1rem;
 }
 
 .aboutcardtxt {
@@ -157,11 +156,39 @@
   .aboutsection {
     padding-top: 10vh;
   }
+
+  .aboutheader {
+    font-size: 5rem;
+    text-align: 'center';
+  }
+
+  .aboutavatar {
+    margin-left: 5vw;
+    margin-bottom: 0vh;
+  }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
+  }
+
+  .aboutsection {
+    padding-top: 10vh;
+  }
+
+  .aboutcardgroup {
+    padding: 0;
+    margin: 0;
+  }
+
+  .aboutsection {
+    padding-top: 10vh;
+  }
+
+  .aboutheader {
+    font-size: 5rem;
+    text-align: 'center';
   }
 }

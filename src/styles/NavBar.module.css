@@ -34,7 +34,7 @@
 @media (max-width: 700px) {
     .navbar {
         padding: 5vh;
-        font-size: 1rem;
+        font-size: 0.7rem;
         flex-direction: row;
         justify-content: space-around;
     }
