@@ -8,6 +8,7 @@ import Icon from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import styles from '@/styles/Home.module.css'
 import { merri } from '..';
+import GlobalStyles from '@mui/material';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
 
 function CustomTabPanel(props) {
@@ -46,8 +47,16 @@ const handleChange = (event, newValue) => {
 return (
     <Box sx={{ width: '100%' }}>
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-        <Tab label="My story" {...a11yProps(0)} />
+        <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            aria-label="tabs of my stories"
+            textColor="inherit"
+            >
+        <Tab label="My story" {...a11yProps(0)} className='tab'/>
         <Tab label="Campus involvement" {...a11yProps(1)} />
         <Tab label="Hobbies" {...a11yProps(2)} />
         <Tab label="Skills" {...a11yProps(3)} />
