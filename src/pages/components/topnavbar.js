@@ -1,6 +1,5 @@
 import styles from '@/styles/NavBar.module.css'
 import { Open_Sans } from 'next/font/google'
-import DarkModeToggle from './darkmodetoggle'
 
 export const opensans = Open_Sans({ subsets: ['latin'], display: 'swap' })
 

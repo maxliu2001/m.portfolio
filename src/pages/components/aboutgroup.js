@@ -1,15 +1,18 @@
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material';
 import Paper from '@mui/material/Paper'
-import Icon from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Chip from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import styles from '@/styles/Home.module.css'
 import { merri } from '..';
-import GlobalStyles from '@mui/material';
-import { List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
 
 function CustomTabPanel(props) {
 const { children, value, index, ...other } = props;
@@ -35,6 +38,74 @@ return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
 };
+}
+
+const BasicAccordion = () => {
+    return (
+        <div>
+        <Accordion className={styles.aboutaccordion}>
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            >
+            <Typography className={merri.className} variant="h5">Key Skills</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                <Typography className={merri.className}>
+                    Full Stack Development, Mobile Development, Web Development, Software Testing, QA Engineering, Communication,
+                    Collaboration, Team-Player
+                </Typography>
+            </AccordionDetails>
+        </Accordion>
+        <Accordion className={styles.aboutaccordion}>
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+            >
+            <Typography className={merri.className} variant="h5">Languages</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography className={merri.className}>
+                Languages: Python, Java, JavaScript, C++, C, Swift, SQL, Bash
+            </Typography>
+            </AccordionDetails>
+        </Accordion>
+        <Accordion className={styles.aboutaccordion}>
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel3a-content"
+            id="panel3a-header"
+            >
+            <Typography className={merri.className} variant="h5">Frameworks & Libraries</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography className={merri.className}>
+                React.js, Vue.js, Node.js, express.js, next.js, React Native, Flask, Django, 
+                SpringBoot, TensorFlow, PyTorch, Pandas, Numpy, Keras, ROS, Open3D, OpenCV, 
+                Beautiful Soup, Ansible
+            </Typography>
+            </AccordionDetails>
+        </Accordion>
+        <Accordion className={styles.aboutaccordion}>
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel4a-content"
+            id="panel4a-header"
+            >
+            <Typography className={merri.className} variant="h5">Tools & Services</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+            <Typography className={merri.className}>
+                Docker, Kubernetes, CI/CD (Lighthouse CI, Karma, Jasmine, Puppeteer), 
+                Git, AWS services, Oracle, MongoDB, Firebase, Vercel, Google Cloud,
+                Docker, Kubernetes, Postman, Hadoop
+            </Typography>
+            </AccordionDetails>
+        </Accordion>
+        </div>
+    );
 }
 
 export default function BasicTabs() {
@@ -64,37 +135,60 @@ return (
     </Box>
     <CustomTabPanel value={value} index={0}>
         <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={styles.aboutcardtxt}>
-            <p className={merri.className}> Hi there! My name&apos;s Max Liu and I&apos;m a rising junior majoring in CS and DS at 
-            University of Michigan. I&apos;m a programmer, photographer and graphics designer. I&apos;m passionate about expressing
-            myself through the digital media. </p>
+            <CardContent className={[styles.aboutcardtxt, merri.className]}>
+                First of all, thanks for visiting my portfolio💻! I&apos;m <b>EXCITED</b> you are here!👋 <br></br>
+                <br></br>
+                A brief introduction about me. My name&apos;s Max(Yinghao) Liu and I&apos;m a rising junior majoring in computer science 
+                and data science at University of Michigan, Ann Arbor. I&apos;m a programmer, graphics designer and photographer. The reason
+                I choose to study this field is because I believe that tech brings people and organizations closer🧑‍. I&apos;m not only passionate 
+                about artistic expression through tech, I also value intelligentual vitality in the process of coming up with innovative solutions 
+                that do social good💻. I&apos;m intrigued by the design and implementation of intelligent systems and I&apos;m interested in learning
+                more about robotics🤖. <br></br>
+                <br></br>
+                I’m actively searching for opportunities as a full stack software development engineer. I am an open-minded, motivated and inquisitive 
+                person. I have good academic records and hands-on internship experience. Here&apos;s my <a href="https://www.linkedin.com/in/max-yinghao-liu-a7948a1ab/"> 
+                <u>Linkedin</u> </a> if you want to check out my journey🌠.
+                
             </CardContent>
         </Paper>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={1}>
         <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={styles.aboutcardtxt}>
-                <p className={merri.className}> I&apos;m interested in full-stack development and robotics. I currently work for MMINT 
-                Lab at UMich and I&apos;m a member at Tau Beta Bi and MRover. Currently. I&apos;m interning at UM ITS as an SDE intern.</p>
+            <CardContent className={[styles.aboutcardtxt, merri.className]}>
+                <h3> UMich BS. Computer Science + Data Science (2022-Present) </h3>
+                Tau Beta Pi (Present) <br></br>
+                Bloackchain at Michigan (Present) <br></br>
+                Michigan Chinese Business Club (Present) <br></br>
+                MRover (Present) <br></br> 
+                <br></br>
+                <h3> UCI BS. Computer Science and Engineering (-2022) </h3>
+                Tau Beta Pi (Present) <br></br>
+                New University (Official Newspaper 2022) <br></br>
+                Honors Student Council (2022) <br></br> 
             </CardContent>
         </Paper>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={2}>
         <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={styles.aboutcardtxt}>
-            <p className={merri.className}> Outside of school, I love mountain biking and creating graphics. I&apos;m also a huge 
-            soccer fan and definitely won&apos;t miss out on major games. I love traveling and eating great good as well. </p>
+            <CardContent className={[styles.aboutcardtxt, merri.className]}>
+            In my free time, I love watching Netflix and movies whenever I can. My favorite director is Christopher Nolan, and my favorite show is
+            WestWorld📺. I also enjoy light-hearted comedy shows like Friends. <br></br>
+            <br></br>
+            Additionally, I also enjoy mountain biking🚵‍♂️, soccer⚽️, and skiing🏂. I&apos;ve been playing soccer since high school and mountain biking
+            is just a side hobby of mine. I picked up skiing in college and It&apos;s still learning in progress. Fun fact: I also play squash but I&apos;
+            m not very good at it. <br></br>
+            <br></br>
+            I love humanities and I always believe humanities powers technological advancement. In my free time, I&apos;m devoted to reading literature, 
+            philosophy, and history💡. I love the phrase of &quot;standing on the shoulder of giants&quot; because it allows me to think in different perspectives.
+            I also enjoy creating digital graphics in my free time🎨. Artistic expression is vital in the world where more tasks can be automated now and I
+            value my unique way of channeling my feelings through creativity.
             </CardContent>
         </Paper>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={3}>
         <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={styles.aboutcardtxt}>
-                <p className={merri.className}> Full Stack Development, Mobile/Web App Development </p>
-                <p className={merri.className}> Languages: Python, Java, JS, C++, Swift ... </p>
-                <p className={merri.className}> Libraries: React.js, Vue.js, Node.js, express.js, next.js, React Native, Flask, Django ... </p>
-                <p className={merri.className}> Frameworks: AWS, Oracle, MongoDB, Firebase, SpringBoot, Vercel ... </p>
-                <p className={merri.className}> Tools: Github CI/CD, Github actions, Docker, MERN, Postman ... </p>
+            <CardContent className={[styles.aboutcardtxt, merri.className]}>
+                <BasicAccordion/>
             </CardContent>
         </Paper>
     </CustomTabPanel>

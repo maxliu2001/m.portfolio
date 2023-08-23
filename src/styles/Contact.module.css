@@ -7,31 +7,55 @@
 }
 
 .contactbtn {
-    border: 1px solid black;
+    background-color: rgba(var(--callout-rgb), 0.2);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
     border-radius: 1em;
     font-size: 2rem;
     text-align: center;
+}
+
+.contactbtn:hover {
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
 }
 
 .linkedinbtn {
-    border: 1px solid black;
+    background-color: rgba(var(--callout-rgb), 0.2);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
     border-radius: 1em;
     font-size: 2rem;
     text-align: center;
+}
+
+.contactbtn:hover {
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.6);  
 }
 
 .gitbtn {
-    border: 1px solid black;
+    background-color: rgba(var(--callout-rgb), 0.2);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
     border-radius: 1em;
     font-size: 2rem;
     text-align: center;
 }
 
+.gitbtn:hover {
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
+}
+
 .resumebtn {
-    border: 1px solid black;
+    background-color: rgba(var(--callout-rgb), 0.2);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
     border-radius: 1em;
     font-size: 2rem;
     text-align: center;
+}
+
+.resumebtn:hover {
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
 }
 
 
