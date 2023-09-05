@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import Image from 'next/image'
 import { Button } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import ContactGroup from './components/contactgroup'
 import { useState, useEffect, useRef } from 'react'
 import AboutGroup from './components/aboutgroup'
@@ -27,6 +28,14 @@ const projects = [
     ML model on Google Cloud, write Docker containerized microservice invoking ChatGPT 4.0 API on Amazon EKS, \
     implement Firebase JWT auth and OAuth 2.0 authentication, and manage user-generated data on MongoDB.",
     url:"https://github.com/FreshReminder-App/FreshReminder"
+  },
+  {
+    title: "Insta Clone (2023)",
+    content: "Program an dockerized instagram clone that uses AWS RDS PostgreSQL database, AWS S3, and AWS \
+    CloudFront CDN for serving resources and handling uploads. Provision cloud infrastructure leveraging AWS \
+    CloudFormation. Configure load balancer and security groups on AWS EC2. Set up a Github actions CI/CD pipeline \
+    to update images on AWS ECR, register task definition and deploy application service on AWS ECS with AWS Fargate. ",
+    url:"disabled"
   },
   {
     title: "Minap (2023)",
@@ -237,7 +246,11 @@ export default function Home() {
                     <h2> {project.title} </h2>
                     <Divider light />
                     <p> {project.content}</p>
-                    <Button variant="contained" href={project.url} endIcon={<GitHubIcon />}> View </Button>
+                    { 
+                      project.url == "disabled"?
+                      <Button variant="contained" color="warning" endIcon={<SmartphoneIcon />}> Contact me for code sample </Button>
+                      :<Button variant="contained" href={project.url} endIcon={<GitHubIcon />}> View </Button> 
+                    }
                   </span>
                 </div>
               </>
@@ -272,7 +285,7 @@ export default function Home() {
 
       {/* Footer Section */}
       <footer className={styles.footer}>
-        <p className={raleway.className}> Handcoded by Max Liu 2023 </p>
+        <p className={raleway.className}> by Max Liu 2023 </p>
         <p className={raleway.className}> @m.portfolio </p>
       </footer>
     </main>

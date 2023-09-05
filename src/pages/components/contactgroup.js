@@ -50,7 +50,7 @@ export default function ContactGroup() {
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                <a href="https://drive.google.com/file/d/1KlaWIkZ-27nGzq_yewbG85VvhpCIegIg/view?usp=sharing" target='_blank'> <p className={roboto.className}> View my Resume </p> </a>
+                <a href="https://drive.google.com/file/d/14gFi2D3RVqPgKtxc06EQMcOcfyg3yi4Q/view?usp=sharing" target='_blank'> <p className={roboto.className}> View my Resume </p> </a>
                 </motion.div>
             </motion.div>
         </>
