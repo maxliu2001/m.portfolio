@@ -1,19 +1,16 @@
 'use client';
-import { useState, Fragment, useEffect } from 'react'
+import { useContext, Fragment, useEffect } from 'react'
 import { Switch } from '@headlessui/react'
+import { DarkModeContext } from './darkmodecontext';
 
 export default function DarkBtn() {
-    const [enabled, setEnabled] = useState(() => document.body.classList.contains('dark'));
-    useEffect(() => {
-        // Update the dark mode class on the body tag when the state changes
-        if (enabled) {
-            document.body.classList.add('dark');
-        } else {
-            document.body.classList.remove('dark');
-        }
-    })
+    const { darkMode, setDarkMode } = useContext(DarkModeContext);
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
     return (
-        <Switch checked={enabled} onChange={setEnabled} as={Fragment}>
+        <Switch checked={darkMode} onChange={toggleDarkMode} as={Fragment}>
         {({ checked }) => (
             /* Use the `checked` state to conditionally style the button. */
             <button
