@@ -22,19 +22,13 @@ export const bitter = Bitter({ subsets: ['latin'], display: 'swap' })
 
 const projects = [
   {
-    title: "FreshReminder (Current)", 
-    content: "We're currently developing a full-stack mobile application that helps users to keep track \
-    their groceries and recommends recipes based on their grocery list. We will host an object/text recognition\
-    ML model on Google Cloud, write Docker containerized microservice invoking ChatGPT 4.0 API on Amazon EKS, \
-    implement Firebase JWT auth and OAuth 2.0 authentication, and manage user-generated data on MongoDB.",
-    url:"https://github.com/FreshReminder-App/FreshReminder"
-  },
-  {
-    title: "Insta Clone (2023)",
-    content: "Program an dockerized instagram clone that uses AWS RDS PostgreSQL database, AWS S3, and AWS \
-    CloudFront CDN for serving resources and handling uploads. Provision cloud infrastructure leveraging AWS \
-    CloudFormation. Configure load balancer and security groups on AWS EC2. Set up a Github actions CI/CD pipeline \
-    to update images on AWS ECR, register task definition and deploy application service on AWS ECS with AWS Fargate. ",
+    title: "Fetch Robot (2024)", 
+    content: "Loaded the Fetch robot in simulation utilizing ROS Bridge and interactive hierarchy traversal to render custom\
+      URDF files. Implemented forward kinematics with LU decomposition routines to enable robot trajectory execution.\
+      Enabled posing robot end-effectors using inverse kinematics via gradient descent with Jacobian transpose.\
+      Integrated resolved-rate inverse kinematics with null space constraints to respective joint limits and Cyclic\
+      Coordinate Descent (CCD) inverse kinematics algorithm. Developed collision detection algorithm and both RRT-\
+      Connect and RRT-Star motion planner for robot navigation.",
     url:"disabled"
   },
   {
@@ -47,6 +41,14 @@ const projects = [
     url:"https://github.com/DepressionCenter/MiNap"
   },
   {
+    title: "Insta Clone (2023)",
+    content: "Program an dockerized instagram clone that uses AWS RDS PostgreSQL database, AWS S3, and AWS \
+    CloudFront CDN for serving resources and handling uploads. Provision cloud infrastructure leveraging AWS \
+    CloudFormation. Configure load balancer and security groups on AWS EC2. Set up a Github actions CI/CD pipeline \
+    to update images on AWS ECR, register task definition and deploy application service on AWS ECS with AWS Fargate. ",
+    url:"disabled"
+  },
+  {
     title: "pSSID (2023)",
     content:"pSSID is the engine that runs UMich ITS's newest project of implementing a full-stack web application\
     on perfSONAR, an open source network analytics tool. UMich is actively contributing to the project to make it \
@@ -56,11 +58,11 @@ const projects = [
     url:"https://github.com/UMNET-perfSONAR/pSSID2"
   },
   {
-    title: "SAM3D (2023)",
-    content:"SAM3D aims to automate the process of feature extraction in computer vision. It runs on ROS and it invokes \
-    Meta's SAM model to extract 2D segmentation masks. Then I match the generated masks to its original depth and extracts \
-    the 3D pointcloud. Finally, using Open3D, I input the pointcloud collection and reconstructs the 3D segmentation scene.",
-    url:"https://github.com/maxliu2001/SAM3D"
+    title: "ROS SAM Client (2023)",
+    content:"Devise an image segmentation ROS service for real-time segmentation mask generation with using OpenCV,\
+    PyTorch and NumPy. Design a GUI that allows customizable segmentation and manage multi-processes between GUI and ROS service.\
+    Separate local ROS service from the server hosting the segmentation model and provisioned server setup with Terraform.",
+    url:"https://github.com/maxliu2001/SAM-ROS-Client-Server"
   },
   {
     title: "ZotMeal (2021)",
@@ -154,7 +156,7 @@ export default function Home() {
       <NavBar></NavBar>
       <section className={styles.header}>
         <Image
-          src="logo.gif" 
+          src="/logo.gif" 
           alt="logo"
           width={400}
           height={400}
@@ -248,8 +250,8 @@ export default function Home() {
                     <p> {project.content}</p>
                     { 
                       project.url == "disabled"?
-                      <Button variant="contained" color="warning" endIcon={<SmartphoneIcon />}> Contact me for code sample </Button>
-                      :<Button variant="contained" href={project.url} endIcon={<GitHubIcon />}> View </Button> 
+                      <Button variant="contained" color="warning" className="m1" endIcon={<SmartphoneIcon />}> Unavailable </Button>
+                      :<Button variant="contained" className="m1" href={project.url} endIcon={<GitHubIcon />}> View </Button> 
                     }
                   </span>
                 </div>

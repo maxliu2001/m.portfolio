@@ -27,9 +27,9 @@
 }
 
 .aboutcard {
-  background-color: linear-gradient(to left top, var(--tile-start-rgb), var(--title-end-rgb));
+  background-color: rgba(var(--about-card-rgb), 0.4);
   border-radius: var(--border-radius);
-  border: 2px solid rgb(var(--tile-border)) !important;
+  border: 2px solid rgb(var(--about-card-border)) !important;
 }
 
 .aboutheader {
@@ -82,7 +82,7 @@
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0.05);
+  background: rgba(var(--card-rgb), 0.4);
   border: 1px solid rgba(var(--card-border-rgb), 0.1);
   transition: background 200ms, border 200ms;
   display: flex;
