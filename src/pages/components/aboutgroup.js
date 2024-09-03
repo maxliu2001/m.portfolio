@@ -2,14 +2,12 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material';
 import Paper from '@mui/material/Paper'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Chip from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import styles from '@/styles/Home.module.css'
 import { merri } from '..';
@@ -53,8 +51,7 @@ const BasicAccordion = () => {
             </AccordionSummary>
             <AccordionDetails>
                 <Typography className={merri.className}>
-                    Full Stack Development, Mobile Development, Web Development, Software Testing, QA Engineering, Communication,
-                    Collaboration, Team-Player
+                    Cloud Computing, Distributed Systems, Full Stack Development, Software Systems, Communication, Team-Player
                 </Typography>
             </AccordionDetails>
         </Accordion>
@@ -64,11 +61,11 @@ const BasicAccordion = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
             >
-            <Typography className={merri.className} variant="h5">Languages</Typography>
+            <Typography className={merri.className} variant="h5">Programming Languages</Typography>
             </AccordionSummary>
             <AccordionDetails>
             <Typography className={merri.className}>
-                Languages: Python, Java, JavaScript, C++, C, Swift, SQL, Bash
+                Python, Java, JavaScript, C++, C, Swift, SQL, Bash, Go
             </Typography>
             </AccordionDetails>
         </Accordion>
@@ -82,9 +79,8 @@ const BasicAccordion = () => {
             </AccordionSummary>
             <AccordionDetails>
             <Typography className={merri.className}>
-                React.js, Vue.js, Node.js, express.js, next.js, React Native, Flask, Django, 
-                SpringBoot, TensorFlow, PyTorch, Pandas, Numpy, Keras, ROS, Open3D, OpenCV, 
-                Beautiful Soup, Ansible
+                Apache Samza, Apache Kafka, Apache Airfow, AWS, GCP, K9S, Docker,
+                Terraform, Ansible, ROS, PyTorch, Open3D, OpenCV, React, Node, express, Spring
             </Typography>
             </AccordionDetails>
         </Accordion>
@@ -99,8 +95,8 @@ const BasicAccordion = () => {
             <AccordionDetails>
             <Typography className={merri.className}>
                 Docker, Kubernetes, CI/CD (Lighthouse CI, Karma, Jasmine, Puppeteer), 
-                Git, AWS services, Oracle, MongoDB, Firebase, Vercel, Google Cloud,
-                Docker, Kubernetes, Postman, Hadoop
+                Git, AWS, Oracle, MongoDB, Firebase, Vercel, GCP,
+                Docker, Kubernetes
             </Typography>
             </AccordionDetails>
         </Accordion>
@@ -127,27 +123,28 @@ return (
             aria-label="tabs of my stories"
             textColor="inherit"
             >
-        <Tab label="My story" {...a11yProps(0)} className='tab'/>
-        <Tab label="Campus involvement" {...a11yProps(1)} />
-        <Tab label="Hobbies" {...a11yProps(2)} />
-        <Tab label="Skills" {...a11yProps(3)} />
+        <Tab label="Intro" {...a11yProps(0)} className='tab'/>
+        <Tab label="Education" {...a11yProps(1)} />
+        <Tab label="Fun Facts" {...a11yProps(2)} />
+        <Tab label="Qualifications" {...a11yProps(3)} />
         </Tabs>
     </Box>
     <CustomTabPanel value={value} index={0}>
-        <Paper elevation={3} className={styles.aboutcard}>
+        <Paper elevation={3} className={styles.aboutcard} >
             <CardContent className={[styles.aboutcardtxt, merri.className]}>
-                First of all, thanks for visiting my portfolio💻! I&apos;m <b>EXCITED</b> you are here!👋 <br></br>
+                Thanks for visiting my portfolio💻! I&apos;m <b>EXCITED</b> you are here!👋 <br></br>
                 <br></br>
-                A brief introduction about me. My name&apos;s Max(Yinghao) Liu and I&apos;m a rising junior majoring in computer science 
-                and data science at University of Michigan, Ann Arbor. I&apos;m a programmer, graphics designer and photographer. The reason
-                I choose to study this field is because I believe that tech brings people and organizations closer🧑‍. I&apos;m not only passionate 
-                about artistic expression through tech, I also value intelligentual vitality in the process of coming up with innovative solutions 
-                that do social good💻. I&apos;m intrigued by the design and implementation of intelligent systems and I&apos;m interested in learning
-                more about robotics🤖. <br></br>
+                A brief introduction about me. My name&apos;s Max(Yinghao) Liu and I&apos;m a senior majoring in computer science 
+                and data science at University of Michigan, Ann Arbor. I&apos;m a programmer, graphics designer and photographer. I believe that 
+                tech brings people and organizations closer🧑‍ through innivation. <br></br>
                 <br></br>
-                I’m actively searching for opportunities as a full stack software development engineer. I am an open-minded, motivated and inquisitive 
-                person. I have good academic records and hands-on internship experience. Here&apos;s my <a href="https://www.linkedin.com/in/max-yinghao-liu-a7948a1ab/"> 
-                <u>Linkedin</u> </a> if you want to check out my journey🌠.
+                I&apos;m not only passionate about artistic expression through tech, I also value 
+                intelligentual vitality in the process of coming up with interdisciplinary solutions 🔧 to real world problems. I&apos;m intrigued
+                 by the design and implementation of intelligent systems, especially robotics🤖. <br></br>
+                <br></br>
+                I’m actively searching for opportunities as a AI/Data infra engineer. I am a highly motivated and open-minded
+                person. I boast strong academic and industrial experiences. Here&apos;s my <a href="https://www.linkedin.com/in/max-liu-a7948a1ab/"> 
+                <u>Linkedin</u></a> for a quick peek at my journey🌠.
                 
             </CardContent>
         </Paper>
@@ -156,32 +153,29 @@ return (
         <Paper elevation={3} className={styles.aboutcard}>
             <CardContent className={[styles.aboutcardtxt, merri.className]}>
                 <h3> UMich BS. Computer Science + Data Science (2022-Present) </h3>
-                Tau Beta Pi (Present) <br></br>
-                Bloackchain at Michigan (Present) <br></br>
-                Michigan Chinese Business Club (Present) <br></br>
-                MRover (Present) <br></br> 
+                Tau Beta Pi <br></br>
+                Bloackchain at Michigan <br></br>
+                Michigan Chinese Business Club <br></br>
+                MRover <br></br> 
                 <br></br>
-                <h3> UCI BS. Computer Science and Engineering (-2022) </h3>
-                Tau Beta Pi (Present) <br></br>
-                New University (Official Newspaper 2022) <br></br>
-                Honors Student Council (2022) <br></br> 
+                <h3> UCI BS. Honors Computer Science and Engineering (-2022) </h3>
+                Tau Beta Pi <br></br>
+                New University (Official Campus Newspaper) <br></br>
+                Honors Student Council <br></br> 
             </CardContent>
         </Paper>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={2}>
         <Paper elevation={3} className={styles.aboutcard}>
             <CardContent className={[styles.aboutcardtxt, merri.className]}>
-            In my free time, I love watching Netflix and movies whenever I can. My favorite director is Christopher Nolan, and my favorite show is
-            WestWorld📺. I also enjoy light-hearted comedy shows like Friends. <br></br>
+            In my free time, I love watching movies and TV shows📺. My favorite director is Christopher Nolan, and my favorite show is
+            WestWorld. I also enjoy some light-hearted comedy like the Office. <br></br>
             <br></br>
-            Additionally, I also enjoy mountain biking🚵‍♂️, soccer⚽️, and skiing🏂. I&apos;ve been playing soccer since high school and mountain biking
-            is just a side hobby of mine. I picked up skiing in college and It&apos;s still learning in progress. Fun fact: I also play squash but I&apos;
-            m not very good at it. <br></br>
+            Additionally, I also enjoy mountain biking🚵‍♂️, soccer⚽️, and skiing🏂. I&apos;ve been playing soccer since high school and I 
+            learnt how to play lacrosse and squash (at a very amatuer level). <br></br>
             <br></br>
-            I love humanities and I always believe humanities powers technological advancement. In my free time, I&apos;m devoted to reading literature, 
-            philosophy, and history💡. I love the phrase of &quot;standing on the shoulder of giants&quot; because it allows me to think in different perspectives.
-            I also enjoy creating digital graphics in my free time🎨. Artistic expression is vital in the world where more tasks can be automated now and I
-            value my unique way of channeling my feelings through creativity.
+            I indulge in humanities, particularly in philosophy and history. Exploring the plenthora of possibilities of technology advancement instead
+            of mindlessly chasing the buzzword (like AI) gives me much to reflect on what I learnt from the CS world.
             </CardContent>
         </Paper>
     </CustomTabPanel>

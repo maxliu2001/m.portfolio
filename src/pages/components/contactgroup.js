@@ -38,7 +38,7 @@ export default function ContactGroup() {
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                    <a href="https://www.linkedin.com/in/max-yinghao-liu-a7948a1ab/" target="_blank"> <p className={roboto.className}>View my Linkedin</p> </a>
+                    <a href="https://www.linkedin.com/in/max-liu-a7948a1ab/" target="_blank"> <p className={roboto.className}>View my Linkedin</p> </a>
                 </motion.div>
                 <motion.div className={styles.gitbtn} variants={item}
                 whileHover={{ scale: 1.2 }}
@@ -50,7 +50,7 @@ export default function ContactGroup() {
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-                <a href="https://drive.google.com/file/d/1EfLH5xjIn2SonveadGA1nEoBEIqDIUNj/view?usp=share_link" target='_blank'> <p className={roboto.className}> View my Resume </p> </a>
+                <a href="https://drive.google.com/file/d/1RXw-PcIzpLZvnPNr5B3Jis8eqLULZkuT/view?usp=sharing" target='_blank'> <p className={roboto.className}> View my Resume </p> </a>
                 </motion.div>
             </motion.div>
         </>
