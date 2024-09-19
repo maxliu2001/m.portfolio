@@ -107,6 +107,8 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
+  overflow: scroll;
+  height: 18em;
 }
 
 .contactsection {
