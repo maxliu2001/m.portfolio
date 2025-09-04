@@ -4,6 +4,12 @@
   min-height: 100vh;
 }
 
+.pageWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
 .header {
   height: 100vh;
   display: flex;
@@ -38,8 +44,7 @@
 }
 
 .aboutavatar {
-  margin-left: 5vw;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
 }
 
 .aboutcardgroup {
@@ -89,11 +94,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* prevent child overflow */
+  text-align: left;
+  overflow-wrap: anywhere; /* break long tokens to prevent overflow */
 }
 
 .card span {
-  display: inline-block;
+  display: block;
   transition: transform 200ms;
+  width: 100%;
+  min-width: 0; /* allow flex child to shrink in container */
+}
+
+/* Ensure any direct child of card can shrink and wrap */
+.card > * {
+  min-width: 0;
+  width: 100%;
 }
 
 .card h2 {
@@ -136,15 +154,40 @@
   justify-content: center;
 }
 
+/* Modal overlay and container */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-height: 80vh;
+  overflow: auto;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0.95);
+  border: 1px solid rgba(var(--card-border-rgb), 0.25);
+  padding: 20px 20px 24px;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.2);
     border: 1px solid rgba(var(--card-border-rgb), 0.3);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
   }
 }
 

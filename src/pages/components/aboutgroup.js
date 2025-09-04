@@ -1,191 +1,172 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import CardContent from '@mui/material/CardContent';
-import styles from '@/styles/Home.module.css'
-import { merri } from '..';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { motion, AnimatePresence } from "framer-motion";
+import styles from "@/styles/Home.module.css";
+import { Merriweather} from 'next/font/google'
 
-function CustomTabPanel(props) {
-const { children, value, index, ...other } = props;
-return (
-    <div
-    role="tabpanel"
-    hidden={value !== index}
-    id={`simple-tabpanel-${index}`}
-    aria-labelledby={`simple-tab-${index}`}
-    {...other}
+export const merri = Merriweather({ subsets: ['latin'], display: 'swap', weight: ['300'] })
+
+/* =========================
+   Card data (edit here)
+   ========================= */
+const CARDS = [
+  {
+    key: "intro",
+    title: "Intro",
+    lines: [
+      "Thanks for visiting my portfolio!",
+      "I'm Max (Yinghao) Liu — an UMich Alum in CS & Data Science.",
+      "Programmer, graphics designer, photographer.",
+      "I believe tech brings people closer through innovation.",
+    ],
+  },
+  {
+    key: "education",
+    title: "Education",
+    lines: [
+      "UMich — B.S. Computer Science & Data Science (2022–25)",
+      "• Tau Beta Pi • Blockchain at Michigan • MChinese Business Club • MRover",
+      "",
+      "UCI — B.S. Honors Computer Science & Engineering (–2022)",
+      "• Tau Beta Pi • New University • Honors Student Council",
+    ],
+  },
+  {
+    key: "funfacts",
+    title: "Fun Facts",
+    lines: [
+      "Into Christopher Nolan movies",
+      "Soccer and mountain biking",
+      "Love reading about history",
+      "Robotics enthusiast",
+    ],
+  },
+];
+
+/* =========================
+   Animations
+   ========================= */
+const titleVariants = {
+  initial: { opacity: 0, x: -24 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] } },
+  exit: { opacity: 0, x: -24, transition: { duration: 0.25 } },
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 14, scale: 0.98 },
+  animate: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35 } },
+  exit: { opacity: 0, y: -10, scale: 0.98, transition: { duration: 0.25 } },
+};
+
+/* =========================
+   Component
+   ========================= */
+export default function SwappableCards() {
+  const [idx, setIdx] = React.useState(0);
+  const current = CARDS[idx];
+
+  const next = () => setIdx((i) => (i + 1) % CARDS.length);
+  const prev = () => setIdx((i) => (i - 1 + CARDS.length) % CARDS.length);
+
+  // keyboard navigation
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "280px 1fr" },
+        gap: { xs: 2, md: 4 },
+        alignItems: "center",
+      }}
     >
-    {value === index && (
-        <Box sx={{ p: 3 }}>
-            {children}
+      {/* Title rail on the left */}
+      <Box sx={{ minHeight: 80, px: { xs: 1, md: 2 } }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current.key}
+            variants={titleVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <Typography
+              variant="h4"
+              className={merri.className}
+              sx={{ fontWeight: 700, lineHeight: 1.2 }}
+            >
+              {current.title}
+            </Typography>
+          </motion.div>
+        </AnimatePresence>
+      </Box>
+
+      {/* Card deck on the right */}
+      <Box sx={{ position: "relative" }}>
+        <AnimatePresence mode="wait">
+          <Box
+            key={current.key}
+            component={motion.div}
+            elevation={3}
+            variants={cardVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className={styles.aboutcard}
+            fontSize={{xs: "0.85em", md: "1em", lg: "1.5em"}}
+            sx={{ overflow: "hidden"}}
+          >
+            <CardContent className={`${styles.aboutcardtxt} ${merri.className}`}>
+              <Box component="ul" sx={{ m: 0, pl: "1.25rem" }}>
+                {current.lines.map((line, i) =>
+                  line ? (
+                    <p key={i}>
+                      <Typography component="span" className={merri.className}>
+                        {line}
+                      </Typography>
+                    </p>
+                  ) : (
+                    <Box key={i} sx={{ height: 8 }} />
+                  )
+                )}
+              </Box>
+            </CardContent>
+          </Box>
+        </AnimatePresence>
+
+        {/* Controls */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            px: 1,
+            pointerEvents: "none",
+          }}
+        >
+          <IconButton onClick={prev} size="small" sx={{ pointerEvents: "auto" }} aria-label="previous card">
+            <ArrowBackIosNewIcon fontSize="small" />
+          </IconButton>
+          <IconButton onClick={next} size="small" sx={{ pointerEvents: "auto" }} aria-label="next card">
+            <ArrowForwardIosIcon fontSize="small" />
+          </IconButton>
         </Box>
-    )}
-    </div>
-);
-}
-
-function a11yProps(index) {
-return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-};
-}
-
-const BasicAccordion = () => {
-    return (
-        <div>
-        <Accordion className={styles.aboutaccordion}>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-            >
-            <Typography className={merri.className} variant="h5">Key Skills</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-                <Typography className={merri.className}>
-                    Cloud Computing, Distributed Systems, Full Stack Development, Software Systems, Communication, Team-Player
-                </Typography>
-            </AccordionDetails>
-        </Accordion>
-        <Accordion className={styles.aboutaccordion}>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-            >
-            <Typography className={merri.className} variant="h5">Programming Languages</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-            <Typography className={merri.className}>
-                Python, Java, JavaScript, C++, C, Swift, SQL, Bash, Go
-            </Typography>
-            </AccordionDetails>
-        </Accordion>
-        <Accordion className={styles.aboutaccordion}>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-            >
-            <Typography className={merri.className} variant="h5">Frameworks & Libraries</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-            <Typography className={merri.className}>
-                Apache Samza, Apache Kafka, Apache Airfow, AWS, GCP, K9S, Docker,
-                Terraform, Ansible, ROS, PyTorch, Open3D, OpenCV, React, Node, express, Spring
-            </Typography>
-            </AccordionDetails>
-        </Accordion>
-        <Accordion className={styles.aboutaccordion}>
-            <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4a-content"
-            id="panel4a-header"
-            >
-            <Typography className={merri.className} variant="h5">Tools & Services</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-            <Typography className={merri.className}>
-                Docker, Kubernetes, CI/CD (Lighthouse CI, Karma, Jasmine, Puppeteer), 
-                Git, AWS, Oracle, MongoDB, Firebase, Vercel, GCP,
-                Docker, Kubernetes
-            </Typography>
-            </AccordionDetails>
-        </Accordion>
-        </div>
-    );
-}
-
-export default function BasicTabs() {
-const [value, setValue] = React.useState(0);
-
-const handleChange = (event, newValue) => {
-    setValue(newValue);
-};
-
-return (
-    <Box sx={{ width: '100%' }}>
-    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            allowScrollButtonsMobile
-            aria-label="tabs of my stories"
-            textColor="inherit"
-            >
-        <Tab label="Intro" {...a11yProps(0)} className='tab'/>
-        <Tab label="Education" {...a11yProps(1)} />
-        <Tab label="Fun Facts" {...a11yProps(2)} />
-        <Tab label="Qualifications" {...a11yProps(3)} />
-        </Tabs>
+      </Box>
     </Box>
-    <CustomTabPanel value={value} index={0}>
-        <Paper elevation={3} className={styles.aboutcard} >
-            <CardContent className={[styles.aboutcardtxt, merri.className]}>
-                Thanks for visiting my portfolio💻! I&apos;m <b>EXCITED</b> you are here!👋 <br></br>
-                <br></br>
-                A brief introduction about me. My name&apos;s Max(Yinghao) Liu and I&apos;m a senior majoring in computer science 
-                and data science at University of Michigan, Ann Arbor. I&apos;m a programmer, graphics designer and photographer. I believe that 
-                tech brings people and organizations closer🧑‍ through innivation. <br></br>
-                <br></br>
-                I&apos;m not only passionate about artistic expression through tech, I also value 
-                intelligentual vitality in the process of coming up with interdisciplinary solutions 🔧 to real world problems. I&apos;m intrigued
-                 by the design and implementation of intelligent systems, especially robotics🤖. <br></br>
-                <br></br>
-                I’m actively searching for opportunities as a AI/Data infra engineer. I am a highly motivated and open-minded
-                person. I boast strong academic and industrial experiences. Here&apos;s my <a href="https://www.linkedin.com/in/max-liu-a7948a1ab/"> 
-                <u>Linkedin</u></a> for a quick peek at my journey🌠.
-                
-            </CardContent>
-        </Paper>
-    </CustomTabPanel>
-    <CustomTabPanel value={value} index={1}>
-        <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={[styles.aboutcardtxt, merri.className]}>
-                <h3> UMich BS. Computer Science + Data Science (2022-Present) </h3>
-                Tau Beta Pi <br></br>
-                Bloackchain at Michigan <br></br>
-                Michigan Chinese Business Club <br></br>
-                MRover <br></br> 
-                <br></br>
-                <h3> UCI BS. Honors Computer Science and Engineering (-2022) </h3>
-                Tau Beta Pi <br></br>
-                New University (Official Campus Newspaper) <br></br>
-                Honors Student Council <br></br> 
-            </CardContent>
-        </Paper>
-    </CustomTabPanel>
-    <CustomTabPanel value={value} index={2}>
-        <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={[styles.aboutcardtxt, merri.className]}>
-            In my free time, I love watching movies and TV shows📺. My favorite director is Christopher Nolan, and my favorite show is
-            WestWorld. I also enjoy some light-hearted comedy like the Office. <br></br>
-            <br></br>
-            Additionally, I also enjoy mountain biking🚵‍♂️, soccer⚽️, and skiing🏂. I&apos;ve been playing soccer since high school and I 
-            learnt how to play lacrosse and squash (at a very amatuer level). <br></br>
-            <br></br>
-            I indulge in humanities, particularly in philosophy and history. Exploring the plenthora of possibilities of technology advancement instead
-            of mindlessly chasing the buzzword (like AI) gives me much to reflect on what I learnt from the CS world.
-            </CardContent>
-        </Paper>
-    </CustomTabPanel>
-    <CustomTabPanel value={value} index={3}>
-        <Paper elevation={3} className={styles.aboutcard}>
-            <CardContent className={[styles.aboutcardtxt, merri.className]}>
-                <BasicAccordion/>
-            </CardContent>
-        </Paper>
-    </CustomTabPanel>
-    </Box>
-);
+  );
 }
