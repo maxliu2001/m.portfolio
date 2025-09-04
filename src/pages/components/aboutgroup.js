@@ -88,7 +88,7 @@ export default function SwappableCards() {
       sx={{
         width: "100%",
         display: "grid",
-        gridTemplateColumns: { xs: "1fr", md: "280px 1fr" },
+        gridTemplateColumns: { xs: "1fr", md: "1fr 3fr" },
         gap: { xs: 2, md: 4 },
         alignItems: "center",
       }}
@@ -115,7 +115,7 @@ export default function SwappableCards() {
       </Box>
 
       {/* Card deck on the right */}
-      <Box sx={{ position: "relative" }}>
+      <Box sx={{ position: "relative", width: "100%" }}>
         <AnimatePresence mode="wait">
           <Box
             key={current.key}
