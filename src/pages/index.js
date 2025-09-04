@@ -14,6 +14,7 @@ export const merri = Merriweather({ subsets: ['latin'], display: 'swap', weight:
 export const raleway = Raleway({ subsets: ['latin'], display: 'swap' })
 export const bitter = Bitter({ subsets: ['latin'], display: 'swap' })
 
+
 const enterAnimation = {
   hidden: {
   opacity: 0,
