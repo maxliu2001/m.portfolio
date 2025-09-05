@@ -27,7 +27,7 @@ const enterAnimation = {
 
 export default function AboutPage({
   title = "About",
-  avatarSrc = "myself.JPG",
+  avatarSrc = "/myself.JPG",
   introText = `I’m Max (Yinghao) Liu, I finished my undergrad at UMich with a CS and 
   Data Science degree. I'm currently working as a sys & infra SWE @ LinkedIn. I love
   building playful UIs and rock-solid systems. I’m especially into distributed systems,
