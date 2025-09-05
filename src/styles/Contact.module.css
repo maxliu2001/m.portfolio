@@ -6,45 +6,10 @@
     padding: 5rem;
 }
 
-.contactbtn {
-    background-color: rgba(var(--callout-rgb), 0.2);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
-    border-radius: 1em;
-    font-size: 2rem;
-    text-align: center;
-}
-
-.contactbtn:hover {
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
-}
-
-.linkedinbtn {
-    background-color: rgba(var(--callout-rgb), 0.2);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
-    border-radius: 1em;
-    font-size: 2rem;
-    text-align: center;
-}
-
-.contactbtn:hover {
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.6);  
-}
-
-.gitbtn {
-    background-color: rgba(var(--callout-rgb), 0.2);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
-    border-radius: 1em;
-    font-size: 2rem;
-    text-align: center;
-}
-
-.gitbtn:hover {
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
-}
-
+/* Shared button styles */
+.contactbtn,
+.linkedinbtn,
+.gitbtn,
 .resumebtn {
     background-color: rgba(var(--callout-rgb), 0.2);
     border: 1px solid rgba(var(--callout-border-rgb), 0.4);
@@ -53,9 +18,11 @@
     text-align: center;
 }
 
+.contactbtn:hover,
+.linkedinbtn:hover,
+.gitbtn:hover,
 .resumebtn:hover {
     background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.6); 
+    border: 1px solid rgba(var(--callout-border-rgb), 0.6);
 }
-
 

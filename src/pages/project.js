@@ -9,7 +9,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
+// modal uses CSS module styles; text colors follow MUI theme
 import styles from "@/styles/Home.module.css";
+import { useTheme, alpha } from "@mui/material/styles";
 
 const bitter = Bitter({ subsets: ["latin"], display: "swap" });
 
@@ -120,6 +122,7 @@ const enterAnimation = {
 
 export default function ProjectsPage() {
   const [active, setActive] = React.useState(null);
+  const theme = useTheme();
 
   const extractYear = (title) => {
     const m = title.match(/\((\d{4}(?:-\d{4})?)\)/);
@@ -156,7 +159,15 @@ export default function ProjectsPage() {
               className={styles.card}
               layoutId={`card-${project.title}`}
               onClick={() => setActive(project)}
-              style={{ cursor: "pointer", width: "100%", border: "none", padding: "1em", overflow: "hidden" }}
+              style={{
+                cursor: "pointer",
+                width: "100%",
+                border: `1px solid ${theme.palette.divider}`,
+                padding: "1em",
+                overflow: "hidden",
+                background: alpha(theme.palette.background.paper, theme.palette.mode === 'dark' ? 0.2 : 0.6),
+                color: theme.palette.text.primary,
+              }}
             >
                 <MuiStack direction="column" spacing={{ xs: 1, sm: 2 }} alignItems="flex-start">
                     <Typography component="h3" variant="h6">
@@ -168,7 +179,13 @@ export default function ProjectsPage() {
                         rowGap={1}
                         flexWrap="wrap">
                     {project.tags?.slice(0, 3).map((t) => (
-                        <Chip key={t} label={t} size="small" variant="outlined"/>
+                        <Chip
+                          key={t}
+                          label={t}
+                          size="small"
+                          variant="filled"
+                          sx={{ bgcolor: 'action.selected', color: 'text.primary' }}
+                        />
                     ))}
                     {extractYear(project.title) && (
                         <Chip label={extractYear(project.title)} size="small" color="primary"/>
@@ -226,7 +243,7 @@ function ModalCard({ project, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <MuiStack direction="row" justifyContent="space-between" alignItems="start">
-          <Typography component="h3" variant="h5">
+          <Typography component="h3" variant="h5" color="text.primary">
             {project.title}
           </Typography>
           <IconButton aria-label="Close" onClick={onClose} size="small">
@@ -239,7 +256,7 @@ function ModalCard({ project, onClose }) {
             <Chip key={t} label={t} size="small" variant="outlined" />
           ))}
         </MuiStack>
-        <Typography component="p" variant="body1" style={{ opacity: 0.9 }}>
+        <Typography component="p" variant="body1" color="text.primary" style={{ opacity: 0.9 }}>
           {project.content}
         </Typography>
         <div style={{ marginTop: 16 }}>

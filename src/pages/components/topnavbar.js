@@ -1,5 +1,6 @@
 import styles from '@/styles/NavBar.module.css'
 import { Open_Sans } from 'next/font/google'
+import ThemeToggle from './ThemeToggle'
 
 export const opensans = Open_Sans({ subsets: ['latin'], display: 'swap' })
 
@@ -11,7 +12,9 @@ export default function NavBar() {
             <div className={styles.navbtn}> <a href="#about"> <p className={opensans.className}>About</p> </a> </div> 
             <div className={styles.navbtn}> <a href="#projects"> <p className={opensans.className}>Projects</p> </a> </div>
             <div className={styles.navbtn}> <a href="#contact"> <p className={opensans.className}>Contact</p> </a> </div>
-            {/* <DarkModeToggle/> */}
+            <div className={styles.navbtn}>
+                <ThemeToggle />
+            </div>
         </div>
     )
 }

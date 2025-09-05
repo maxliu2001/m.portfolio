@@ -18,7 +18,7 @@
   font-size: 2rem;
   align-items: center;
   text-align: center;
-  gap: 0.5 rem;
+  gap: 0.5rem;
   padding-top: 10vh;
 }
 
@@ -40,7 +40,7 @@
 
 .aboutheader {
   font-size: 6rem;
-  text-align: 'center';
+  text-align: center;
 }
 
 .aboutavatar {
@@ -155,6 +155,7 @@
 }
 
 /* Modal overlay and container */
+/* Modal styles */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -176,8 +177,8 @@
   max-height: 80vh;
   overflow: auto;
   border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0.95);
-  border: 1px solid rgba(var(--card-border-rgb), 0.25);
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border);
   padding: 20px 20px 24px;
   z-index: 1001;
   box-sizing: border-box;
@@ -215,7 +216,7 @@
 
   .aboutheader {
     font-size: 5rem;
-    text-align: 'center';
+    text-align: center;
   }
 
   .aboutavatar {

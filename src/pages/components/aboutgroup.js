@@ -7,6 +7,7 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "@/styles/Home.module.css";
+import { useTheme, alpha } from "@mui/material/styles";
 import { Merriweather} from 'next/font/google'
 
 export const merri = Merriweather({ subsets: ['latin'], display: 'swap', weight: ['300'] })
@@ -22,7 +23,8 @@ const CARDS = [
       "Thanks for visiting my portfolio!",
       "I'm Max (Yinghao) Liu — an UMich Alum in CS & Data Science.",
       "Programmer, graphics designer, photographer.",
-      "I believe tech brings people closer through innovation.",
+      "I believe tech brings people closer through meaningful engagement.",
+      "Feel free to reach out via the contact form below!",
     ],
   },
   {
@@ -44,6 +46,7 @@ const CARDS = [
       "Soccer and mountain biking",
       "Love reading about history",
       "Robotics enthusiast",
+      "I have two lovely cats",
     ],
   },
 ];
@@ -69,6 +72,7 @@ const cardVariants = {
 export default function SwappableCards() {
   const [idx, setIdx] = React.useState(0);
   const current = CARDS[idx];
+  const theme = useTheme();
 
   const next = () => setIdx((i) => (i + 1) % CARDS.length);
   const prev = () => setIdx((i) => (i - 1 + CARDS.length) % CARDS.length);
@@ -106,7 +110,7 @@ export default function SwappableCards() {
             <Typography
               variant="h4"
               className={merri.className}
-              sx={{ fontWeight: 700, lineHeight: 1.2 }}
+              sx={{ fontWeight: 700, lineHeight: 1.2, color: 'text.primary' }}
             >
               {current.title}
             </Typography>
@@ -127,14 +131,21 @@ export default function SwappableCards() {
             exit="exit"
             className={styles.aboutcard}
             fontSize={{xs: "0.85em", md: "1em", lg: "1.5em"}}
-            sx={{ overflow: "hidden"}}
+            sx={{
+              overflow: "hidden",
+              bgcolor: alpha(theme.palette.background.paper, theme.palette.mode === 'dark' ? 0.4 : 0.6),
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: theme.shape.borderRadius,
+              color: 'text.primary',
+            }}
           >
             <CardContent className={`${styles.aboutcardtxt} ${merri.className}`}>
               <Box component="ul" sx={{ m: 0, pl: "1.25rem" }}>
                 {current.lines.map((line, i) =>
                   line ? (
                     <p key={i}>
-                      <Typography component="span" className={merri.className}>
+                      <Typography component="span" className={merri.className} color="text.primary">
                         {line}
                       </Typography>
                     </p>
