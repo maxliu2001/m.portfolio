@@ -57,7 +57,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className={styles.contactsection} id="contact">
         <Grid container spacing={4} alignItems='center'>
-          <Grid xs={12} md={5} lg={6}>
+          <Grid xs={12} md={6} lg={6}>
             <motion.div
             className="div-container"
             initial="hidden"

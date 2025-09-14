@@ -144,14 +144,15 @@ export default function ProjectsPage() {
             className={styles.projectheader}
             padding={5}
             >
-              <Typography
-                  component="h1"
-                  variant="h1"
-                  className={styles.projectheader}
-                  sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
-              >
-                  Projects
-              </Typography>
+              <Grid xs={12}>
+                <Typography
+                    component="h1"
+                    variant="h1"
+                    sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
+                >
+                    Projects
+                </Typography>
+              </Grid>
             </Grid>
             <motion.section variants={enterAnimation}>
             </motion.section>

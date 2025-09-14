@@ -68,7 +68,7 @@
   justify-content: space-between;
   height: auto;
   padding: 1rem;
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 
 .projectheader {
@@ -240,12 +240,17 @@
     margin: 0;
   }
 
-  .aboutsection {
-    padding-top: 10vh;
-  }
-
   .aboutheader {
-    font-size: 5rem;
+    font-size: 2rem;
     text-align: 'center';
   }
+
+  .projectsection {
+    justify-content: center;
+  }
+
+  .projectheader {
+    font-size: 2rem;
+    text-align: 'center';
+}
 }

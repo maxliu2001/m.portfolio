@@ -55,7 +55,6 @@ export default function AboutPage({
               <Typography
                 component="h1"
                 variant="h1"
-                className={styles.aboutheader}
                 sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
               >
                 {title}
