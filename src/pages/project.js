@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 // modal uses CSS module styles; text colors follow MUI theme
 import styles from "@/styles/Home.module.css";
 import { useTheme, alpha } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
 
 const bitter = Bitter({ subsets: ["latin"], display: "swap" });
 
@@ -136,17 +137,23 @@ export default function ProjectsPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.8 }}
-          spacing={{ xs: 2, md: 3 }}
         >
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            className={styles.projectheader}
+            padding={5}
+            >
+              <Typography
+                  component="h1"
+                  variant="h1"
+                  className={styles.projectheader}
+                  sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
+              >
+                  Projects
+              </Typography>
+            </Grid>
             <motion.section variants={enterAnimation}>
-                <Typography
-                    component="h1"
-                    variant="h1"
-                    className={styles.projectheader}
-                    sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
-                >
-                    Projects
-                </Typography>
             </motion.section>
         </motion.div>
 

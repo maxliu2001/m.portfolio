@@ -27,15 +27,29 @@
         padding: 5vh;
         flex-direction: row;
         justify-content: space-around;
+        gap: 1em;
     }
 }
 
 /* Mobile */
 @media (max-width: 700px) {
     .navbar {
-        padding: 5vh;
-        font-size: 0.7rem;
+        padding: 1rem;
+        font-size: 0.875rem;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.25em;
+        flex-wrap: nowrap;
+        width: 100%;
     }
+
+    .navbtn {
+        font-size: clamp(0.8rem, 3.2vw, 0.95rem);
+        height: auto;
+        flex: 0 1 auto;
+    }
+
+    /* Prevent label wrapping inside each button */
+    .navbtn p { white-space: nowrap; }
 }
