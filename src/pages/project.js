@@ -138,23 +138,22 @@ export default function ProjectsPage() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.8 }}
         >
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            className={styles.projectheader}
-            padding={5}
-            >
-              <Grid xs={12}>
-                <Typography
-                    component="h1"
-                    variant="h1"
-                    sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
-                >
-                    Projects
-                </Typography>
+          <motion.section variants={enterAnimation}>
+            <Grid
+              container
+              spacing={{ xs: 2, md: 2 }}
+              className={styles.projectheader}
+              padding={1}
+              >
+                <Grid xs={12}>
+                  <Typography
+                      component="h1"
+                      sx={{ textAlign: "center", mb: { xs: 1, md: 1 } }}
+                  >
+                      Projects
+                  </Typography>
+                </Grid>
               </Grid>
-            </Grid>
-            <motion.section variants={enterAnimation}>
             </motion.section>
         </motion.div>
 

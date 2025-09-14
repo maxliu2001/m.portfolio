@@ -38,11 +38,6 @@
   border: 2px solid rgb(var(--about-card-border)) !important;
 }
 
-.aboutheader {
-  font-size: 6rem;
-  text-align: center;
-}
-
 .aboutavatar {
   margin-bottom: 1vh;
 }
@@ -71,8 +66,10 @@
   padding-top: 5vh;
 }
 
-.projectheader {
+/* Apply to actual headings: About/Projects have class on container */
+.aboutheader h1, .projectheader h1, .contactheader h1{
   font-size: 5rem;
+  text-align: center;
 }
 
 .grid {
@@ -138,11 +135,6 @@
   padding-top: 10vh;
 }
 
-.contactheader {
-  font-size: 5rem;
-  text-align: center;
-}
-
 .footer {
   width: 100vw;
   min-height: 100%;
@@ -197,13 +189,21 @@
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
-    max-width: 320px;
+    max-width: 100%;
+    width: 100%;
     text-align: center;
     gap: 3vh;
   }
 
   .card {
-    padding: 1rem 2.5rem;
+    padding: 1rem 1rem;
+  }
+
+  .aboutheader h1, .projectheader h1, .contactheader h1{
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.1;
+    max-width: 100%;
   }
 
   .card h2 {
@@ -211,17 +211,13 @@
   }
 
   .aboutsection {
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
 
-  .aboutheader {
-    font-size: 5rem;
-    text-align: center;
-  }
+  
 
   .aboutavatar {
-    margin-left: 5vw;
-    margin-bottom: 0vh;
+    margin: 2vw;
   }
 }
 
@@ -240,17 +236,12 @@
     margin: 0;
   }
 
-  .aboutheader {
-    font-size: 2rem;
-    text-align: 'center';
-  }
-
   .projectsection {
-    justify-content: center;
+    padding-top: 10vh;
   }
 
-  .projectheader {
-    font-size: 2rem;
-    text-align: 'center';
-}
+  .aboutheader h1, .projectheader h1, .contactheader h1{
+    font-size: 3rem;
+    text-align: center;
+  }
 }

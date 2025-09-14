@@ -9,6 +9,7 @@ import ContactGroup from './components/contactgroup'
 import Landing from './landing'
 import AboutPage from './about'
 import ProjectsPage from './project'
+import { Typography } from '@mui/material'
 
 export const merri = Merriweather({ subsets: ['latin'], display: 'swap', weight: ['300'] })
 export const raleway = Raleway({ subsets: ['latin'], display: 'swap' })
@@ -66,8 +67,13 @@ export default function Home() {
             >
               <motion.section
               variants={enterAnimation}
+              className={styles.contactheader}
               > 
-                <h1 className={styles.contactheader}>Contact</h1>
+                <Typography
+                  component="h1"
+                  sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}>
+                  Contact
+                </Typography>
               </motion.section>
             </motion.div>  
           </Grid>

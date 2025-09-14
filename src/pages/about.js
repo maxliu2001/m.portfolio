@@ -54,7 +54,6 @@ export default function AboutPage({
             <Grid xs={12}>
               <Typography
                 component="h1"
-                variant="h1"
                 sx={{ textAlign: "center", mb: { xs: 1, md: 2 } }}
               >
                 {title}
