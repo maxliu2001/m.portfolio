@@ -1,28 +1,73 @@
 .contactcontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 5vh;
-    padding: 5rem;
+  display: grid;
+  gap: 1rem;
 }
 
-/* Shared button styles */
-.contactbtn,
-.linkedinbtn,
-.gitbtn,
-.resumebtn {
-    background-color: rgba(var(--callout-rgb), 0.2);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.4);
-    border-radius: 1em;
-    font-size: 2rem;
-    text-align: center;
+.emailButton {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid #54e878;
+  border-radius: 1rem;
+  color: #071109;
+  background: #54e878;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.contactbtn:hover,
-.linkedinbtn:hover,
-.gitbtn:hover,
-.resumebtn:hover {
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.6);
+.emailButton > span:first-child {
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
+.emailButton strong {
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 650;
+}
+
+.emailButton > span:last-child {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  font-size: 1.5rem;
+}
+
+.emailButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(84, 232, 120, 0.18);
+}
+
+.linkList {
+  border-top: 1px solid var(--line);
+}
+
+.linkList > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+  transition: padding 180ms ease, background 180ms ease;
+}
+
+.linkList > a:hover {
+  padding-inline: 0.8rem;
+  background: var(--surface-soft);
+}
+
+.linkList > a > span:first-child {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.linkList strong {
+  font-size: 1rem;
+}
+
+.linkList small {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}

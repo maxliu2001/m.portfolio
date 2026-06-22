@@ -1,4 +1,4 @@
-// components/CursorComet.jsx
+// Pointer-following accent rendered outside the document flow.
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { motion, useMotionValue, useSpring } from "framer-motion";
@@ -17,9 +17,9 @@ function CursorComet({ enabled = true }) {
   const trailRef = useRef([]); // [{x,y,t}]
   const [tick, setTick] = useState(0); // minimal state to trigger child-only renders
 
-  const TAIL = 20;           // length of tail
-  const MIN_DIST = 2;        // only add point if moved at least this many px
-  const SAMPLE_MS = 16;      // ~60fps
+  const TAIL = 10;
+  const MIN_DIST = 5;
+  const SAMPLE_MS = 28;
 
   useEffect(() => {
     if (!enabled) return;
@@ -59,7 +59,7 @@ function CursorComet({ enabled = true }) {
 
       // Remove old points to fade the tail away when not moving
       const arr = trailRef.current;
-      const FADE_MS = 100; // tail fade duration in ms
+      const FADE_MS = 120;
       const nowTime = performance.now();
       if (arr.length > 0 && nowTime - arr[0].t > FADE_MS) {
         arr.shift();
@@ -80,7 +80,7 @@ function CursorComet({ enabled = true }) {
     el.style.position = "fixed";
     el.style.inset = "0";
     el.style.pointerEvents = "none";
-    el.style.zIndex = "30";
+    el.style.zIndex = "1";
     portalElRef.current = el;
     document.body.appendChild(el);
     return () => {
@@ -102,11 +102,11 @@ function CursorComet({ enabled = true }) {
           left: 0,
           x: sx,
           y: sy,
-          width: 24,
-          height: 24,
+          width: 12,
+          height: 12,
           borderRadius: "50%",
           background: "radial-gradient(circle, #39ff14 0%, #22cc11 70%)",
-          boxShadow: "0 0 30px #39ff14, 0 0 60px #39ff14",
+          boxShadow: "0 0 18px rgba(57,255,20,.8), 0 0 36px rgba(57,255,20,.3)",
           translateX: "-50%",
           translateY: "-50%",
           pointerEvents: "none",
@@ -124,9 +124,9 @@ function CursorComet({ enabled = true }) {
 
         // slow fade & taper
         const t = i / (Math.max(trail.length - 1, 1)); // 0 -> near head, 1 -> tail end
-        const opacity = 0.95 - t * 0.7;                // stays bright longer
-        const thickness = 5 - t * 2.5;                 // taper slowly
-        const blur = 0.5 + t * 2.5;                    // more blur deeper in tail
+        const opacity = 0.42 - t * 0.3;
+        const thickness = 2.5 - t * 1.4;
+        const blur = 1 + t * 2;
 
         // vivid neon-ish ramp for dark bg
         const r = Math.round(90 + t * 70);
@@ -145,7 +145,7 @@ function CursorComet({ enabled = true }) {
               transformOrigin: "left center",
               transform: `rotate(${angle}rad)`,
               background: `rgba(${r},${g},${b},${opacity})`,
-              boxShadow: `0 0 14px rgba(${r},${g},${b},${opacity})`,
+              boxShadow: `0 0 8px rgba(${r},${g},${b},${opacity})`,
               filter: `blur(${blur}px)`,
               pointerEvents: "none",
             }}
