@@ -91,6 +91,16 @@ const projects = [
     tags: ["Networking", "Open source", "Systems"],
   },
   {
+    title: "Robotic Furniture Assembly",
+    year: "2023",
+    summary: "Long-horizon robotic manipulation policies for furniture assembly in NVIDIA Isaac Gym.",
+    role: "EECS 545 group project",
+    impact: "Simulation-trained policies",
+    details: "Completed at the University of Michigan in Ann Arbor. Trained furniture-assembly policies with Implicit Q-Learning and recurrent Behavior Cloning, then designed a simulation dataset generation and augmentation pipeline combining R3M visual encoders with proprioceptive data to improve policy generalization under randomness.",
+    url: null,
+    tags: ["Isaac Gym", "Imitation learning", "R3M"],
+  },
+  {
     title: "Fakebook JDBC",
     year: "2023",
     summary: "Database coursework exploring relational analytics over a social-network schema with Java and Oracle.",
